@@ -1,0 +1,38 @@
+@import 'vars';
+@import 'mixins';
+@import 'global';
+@import 'layout/layout';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'style-guide/cta-button';
+@import 'style-guide/loader';
+@import 'style-guide/error';
+@import 'style-guide/pre';
+@import 'page';
+@import 'transactions/list';
+@import 'transactions/summary';
+@import 'upload/upload-area';
+
+html, body {
+  height: 100%;
+  font-family: 'Open Sans';
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+h2 {
+  color: #333;
+}
+
+h3 {
+  color: #000;
+}
+
+p {
+  color: #666;
+}
+

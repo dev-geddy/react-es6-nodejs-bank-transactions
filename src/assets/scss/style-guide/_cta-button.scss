@@ -1,0 +1,19 @@
+.cta-button {
+  border-radius: 3px;
+  background-color: $color-the-orange;
+  color: $color-the-white;
+  line-height: 18px;
+  padding: 6px 15px;
+  text-shadow: 0 0 2px darken($color-the-orange, 20);
+  text-transform: uppercase;
+  font-weight: 600;
+
+  &.grey {
+    background-color: #ccc;
+    text-shadow: 0 0 2px darken(#ccc, 20);
+  }
+
+  &.space-after {
+    margin-right: 15px;
+  }
+}

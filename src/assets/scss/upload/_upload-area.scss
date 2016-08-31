@@ -1,0 +1,43 @@
+.upload-drop-area {
+  border: 1px dashed #2c2c2c;
+  background-color: #fafafa;
+  border-radius: 3px;
+  padding: 25px;
+  p {
+    margin: 5px 0;
+    text-align: center;
+    i {
+      font-size: 32px;
+      color: #cacaca
+    }
+  }
+}
+
+.upload-area {
+  display: block;
+
+}
+
+.files-queue {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  li {
+    margin-bottom: 5px;
+    border: 1px solid $color-menu-border;
+    border-radius: 3px;
+    padding: 5px 10px;
+    overflow-x: hidden;
+    position: relative;
+    a {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      color: $color-text;
+    }
+  }
+}
+
+.form-footer {
+  margin: 15px 0;
+}

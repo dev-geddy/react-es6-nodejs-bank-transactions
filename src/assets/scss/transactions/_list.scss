@@ -1,0 +1,20 @@
+table {
+  tr {
+    td, th {
+      padding: 4px;
+      &.date-column {
+        white-space: nowrap;
+      }
+      &.amount {
+        font-weight: bold;
+        white-space: nowrap;
+        &.green {
+          color: green;
+        }
+        &.red {
+          color: #999999;
+        }
+      }
+    }
+  }
+}

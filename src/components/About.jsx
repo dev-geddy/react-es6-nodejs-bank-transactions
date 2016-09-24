@@ -55,7 +55,7 @@ class About extends Component {
             <div className="column small-12 medium-6 large-6">
               <h3>Thank you</h3>
               <p>Thank you for checking out my app.</p>
-              <p>Sincerely,<br/>Gediminas</p>
+              <p>Sincerely,<br/><span className="gediminas">Gediminas</span></p>
             </div>
           </div>
         </div>

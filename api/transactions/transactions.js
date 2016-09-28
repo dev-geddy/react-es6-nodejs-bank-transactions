@@ -18,28 +18,34 @@ function formatDate(date) {
 
 
   if (moment(date, 'DD/MM/YYYY').isValid()) {
+    console.log("Parsing as: DD/MM/YYYY")
     return moment(date, 'DD/MM/YYYY').format('YYYY-MM-DD')
 
+  } else if (moment(date, 'YYYY-MM-DD').isValid()) {
+    console.log("Parsing as: YYYY-MM-DD")
+    return moment(date, 'YYYY-MM-DD').format('YYYY-MM-DD')
+
   } else if (moment(date, 'DD-MM-YYYY').isValid()) {
+    console.log("Parsing as: DD-MM-YYYY")
     return moment(date, 'DD-MM-YYYY').format('YYYY-MM-DD')
 
   } else if (moment(date, 'DD MM YYYY').isValid()) {
+    console.log("Parsing as: DD MM YYYY")
     return moment(date, 'DD MM YYYY').format('YYYY-MM-DD')
 
-  } else if (moment(date, 'YYYY-MM-DD').isValid()) {
-    return moment(date, 'YYYY-MM-DD').format('YYYY-MM-DD')
-
   } else if (moment(date, 'DD MMM YYYY').isValid()) {
+    console.log("Parsing as: DD MMM YYYY")
     return moment(date, 'DD MMM YYYY').format('YYYY-MM-DD')
 
   } else {
+    console.log("Could not parse date. Falling back to: 2100-01-01")
     return '2100-01-01'
   }
 }
 
 function transformData(data) {
   var transformedData = []
-  var balance = 1000.00 // starts from fictional balance
+  var balance = 10000.00 // starts from fictional balance
   for (var i = 0; i < data.length; i++) {
     balance = balance + parseFloat(data[i][2])
     var newEntry = {

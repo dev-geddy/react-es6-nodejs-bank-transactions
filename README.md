@@ -1,6 +1,6 @@
 # My Transactions Interpreting Tool
 Application purpose is to parse bank transactions history from CSV file,
-categorise expenses and visualise balance over time.
+categorise & aggregate expenses and visualise balance over time.
 
 ## How to run
 Once project is checked out, run the following commands:

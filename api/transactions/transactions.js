@@ -77,8 +77,42 @@ function transformMiData(data) {
   return transformedData
 }
 
+function isNotIncome(type) {
+  if (
+    type === 'DD' ||
+    type === 'FPO' ||
+    type === 'DEB'
+  ) {
+    return true
+  }
+  return false
+}
+
+function transformBusinessData(data) {
+
+  // identify format and column count, if unrecognised - return error
+
+  var transformedData = []
+  for (var i = 0; i < data.length; i++) {
+    // console.log('Amount: ', data[i][5],' | ', data[i][6], ' | ', parseFloat(data[i][5]))
+    var newEntry = {
+      date: formatDate(data[i][0]),
+      type: data[i][1],
+      description: data[i][4],
+      amount: isNotIncome(data[i][1]) ? - parseFloat(''+data[i][5]) : parseFloat(''+data[i][6]),
+      balance: parseFloat(data[i][7].replace('£', ''))
+    }
+    transformedData.push(newEntry)
+  }
+  return transformedData
+}
+
 function formatSourceData(data) {
-  if (data.length && data[0].length === 5) {
+  if (data.length && data[0].length === 8) {
+    // hsbc yearly statement of account
+    console.log("Will parse BUSINESS transactions (8 columns)")
+    return transformBusinessData(data)
+  } else if (data.length && data[0].length === 5) {
     // hsbc yearly statement of account
     console.log("Will parse YEARLY transactions (5 columns)")
     return transformMiData(data)
@@ -87,6 +121,7 @@ function formatSourceData(data) {
     console.log("Will parse MONTHLY statement (3 columns)")
     return transformData(data)
   } else {
+    console.log("Unrecognised CSV" + data[0].length)
     return []
   }
 }
